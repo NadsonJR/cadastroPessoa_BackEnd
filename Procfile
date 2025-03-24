@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -jar target/your-app-name.jar
+web: java -Dserver.port=$PORT -jar target/cep-api-1.jar
