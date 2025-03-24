@@ -15,17 +15,16 @@ import java.util.List;
 @RequestMapping("/pessoas")
 public class PessoaController {
     private final PessoaService pessoaService;
-
     public PessoaController(PessoaService pessoaService) {
         this.pessoaService = pessoaService;
-    }
-
+    }@CrossOrigin(origins = "https://cadastropessoabackend-6a32f0706386.herokuapp.com")
     @PostMapping("/create")
     public ResponseEntity<Pessoa> createPessoa(@RequestBody Pessoa pessoa) {
         Pessoa createdPessoa = pessoaService.createPessoa(pessoa);
         return ResponseEntity.ok(createdPessoa);
     }
 
+    @CrossOrigin(origins = "https://cadastropessoabackend-6a32f0706386.herokuapp.com")
     @PostMapping("/login")
     public ResponseEntity<Pessoa> login(@RequestBody Pessoa loginRequest) {
         Pessoa pessoa = pessoaService.findByEmailAndPassword(loginRequest.getEmail(), loginRequest.getSenha());
@@ -35,7 +34,7 @@ public class PessoaController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
     }
-
+    @CrossOrigin(origins = "https://cadastropessoabackend-6a32f0706386.herokuapp.com")
     @GetMapping("/check-email")
     public ResponseEntity<String> checkEmail(@RequestParam String email) {
         if (pessoaService.emailExists(email)) {
@@ -44,19 +43,19 @@ public class PessoaController {
             return ResponseEntity.ok("Email does not exist in the database");
         }
     }
-
+    @CrossOrigin(origins = "https://cadastropessoabackend-6a32f0706386.herokuapp.com")
     @GetMapping("/all")
     public ResponseEntity<List<Pessoa>> getAllPessoas() {
         List<Pessoa> pessoas = pessoaService.getAllPessoas();
         return ResponseEntity.ok(pessoas);
     }
-
+    @CrossOrigin(origins = "https://cadastropessoabackend-6a32f0706386.herokuapp.com")
     @GetMapping("/{id}")
     public ResponseEntity<Pessoa> getPessoaById(@PathVariable Long id) {
         Pessoa pessoa = pessoaService.getPessoaById(id).orElseThrow(() -> new RuntimeException("Pessoa not found"));
         return ResponseEntity.ok(pessoa);
     }
-
+    @CrossOrigin(origins = "https://cadastropessoabackend-6a32f0706386.herokuapp.com")
     @PutMapping("/{id}")
     public ResponseEntity<Pessoa> updatePessoa(@PathVariable Long id, @RequestBody Pessoa pessoaDetails) {
         Pessoa updatedPessoa = pessoaService.updatePessoa(id, pessoaDetails);

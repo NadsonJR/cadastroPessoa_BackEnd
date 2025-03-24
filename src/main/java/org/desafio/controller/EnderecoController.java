@@ -15,6 +15,7 @@ public class EnderecoController {
     public EnderecoController(EnderecoService enderecoService) {
         this.enderecoService = enderecoService;
     }
+    @CrossOrigin(origins = "https://cadastropessoabackend-6a32f0706386.herokuapp.com")
     @GetMapping("/cep/{cep}")
     public ResponseEntity<Object> getCep(@PathVariable String cep) {
         log.info("Recebendo solicitacao para buscar CEP:"+ cep);
@@ -29,6 +30,7 @@ public class EnderecoController {
                     .body("Erro ao processar a solicitacao: " + e.getMessage());
         }
     }
+    @CrossOrigin(origins = "https://cadastropessoabackend-6a32f0706386.herokuapp.com")
     @PostMapping("/create")
     public ResponseEntity<Endereco> createEndereco(@RequestBody Endereco endereco) {
         Endereco createdEndereco = enderecoService.createEndereco(endereco);
