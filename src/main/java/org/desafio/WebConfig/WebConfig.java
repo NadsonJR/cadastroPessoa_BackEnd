@@ -16,6 +16,7 @@ public class WebConfig implements WebMvcConfigurer {
                 registry.addMapping("/**")
                         .allowedOriginPatterns("https://cadastropessoabackend-6a32f0706386.herokuapp.com")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                        .allowedHeaders("Content-Type", "Authorization")
                         .allowCredentials(true);
             }
         };
