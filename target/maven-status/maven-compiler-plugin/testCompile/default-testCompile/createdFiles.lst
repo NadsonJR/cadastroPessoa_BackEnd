@@ -1,0 +1,10 @@
+org\desafio\controller\EnderecoControllerIntegrationTest.class
+org\desafio\controller\RestAssured\PessoaControllerRestAssuredTest.class
+org\desafio\runner\TestRunner.class
+org\desafio\logic\LoginLogic.class
+org\desafio\steps\StepDefinitions.class
+org\desafio\controller\PessoaControllerTest.class
+org\desafio\controller\RestAssured\EnderecoControllerRestAssuredTest.class
+org\desafio\controller\PessoaControllerIntegrationTest.class
+org\desafio\controller\EnderecoControllerTest.class
+org\desafio\utils\Utilities.class

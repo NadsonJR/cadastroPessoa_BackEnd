@@ -1,0 +1,11 @@
+org\desafio\controller\EnderecoController.class
+org\desafio\repository\EnderecoRepository.class
+org\desafio\service\PessoaService.class
+org\desafio\WebConfig\WebConfig$1.class
+org\desafio\controller\PessoaController.class
+org\desafio\repository\PessoaRepository.class
+org\desafio\DesafioNTTApplication.class
+org\desafio\model\Pessoa.class
+org\desafio\service\EnderecoService.class
+org\desafio\model\Endereco.class
+org\desafio\WebConfig\WebConfig.class
